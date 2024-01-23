@@ -1,0 +1,22 @@
+<div class="hero-section">
+  <h1>Save any kind of movies</h1>
+</div>
+
+
+<div class="container mt-3">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>My lists</h1>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-primary" %>
+  </div>
+
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <div class="card mb-3 p-3 bg-white">
+        <span><%= list.name %></span>
+        <span>Created: <%= list.created_at.strftime('%m/%d/%Y') %></span>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

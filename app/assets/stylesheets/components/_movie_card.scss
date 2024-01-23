@@ -1,0 +1,28 @@
+.movies-cards {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  .movie-card {
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.1);
+    .movie-card-img {
+      height: 150px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+    .movie-card-top, .movie-card-overview {
+      padding: 4px 12px;
+    }
+    .movie-card-top {
+      font-weight: bold;
+    }
+    .movie-card-overview {
+      font-size: 12px;
+    }
+}
+}
