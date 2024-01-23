@@ -5,6 +5,7 @@
   <div class="card bg-white p-3">
     <%= simple_form_for @list do |list| %>
       <%= list.input :name %>
+      <%= list.input :picture, as: :file%>
       <%= list.button :submit, class:"btn btn-primary" %>
     <% end %>
     <%= link_to "Cancel", lists_path, class:"mt-3" %>
