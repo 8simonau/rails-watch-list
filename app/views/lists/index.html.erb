@@ -12,9 +12,12 @@
 
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
-      <div class="card mb-3 p-3 bg-white">
-        <span><%= list.name %></span>
-        <span>Created: <%= list.created_at.strftime('%m/%d/%Y') %></span>
+      <div class="card mb-3 p-3 bg-white d-flex flex-row">
+        <%= cl_image_tag list.picture.key, width: 80, height: 80, crop: :fill, class:"me-3" %>
+        <div>
+          <p><%= list.name %></p>
+          <p>Created: <%= list.created_at.strftime('%m/%d/%Y') %></p>
+        </div>
       </div>
     <% end %>
   <% end %>

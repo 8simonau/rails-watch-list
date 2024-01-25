@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_list, only: [:new, :create, :destroy]
+  before_action :set_list, only: [:new, :create]
 
   def new
     @bookmark = Bookmark.new(list: @list)
@@ -9,16 +9,17 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
     if @bookmark.save
-      redirect_to lists_path
+      redirect_to list_path(@list)
     else
       render :new, status: :unprocessable_entity
-      raise
     end
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    @list = @bookmark.list.id
     @bookmark.destroy
+    redirect_to list_path(@list), status: :see_other
   end
 
   private

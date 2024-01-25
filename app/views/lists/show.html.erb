@@ -23,7 +23,7 @@
         <div class="movie-card-overview">
           <p><%= b.movie.overview %></p>
           <span><%= b.comment %></span>
-          <%= link_to "delete", bookmark_path(b), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%= button_to "delete", bookmark_path(b),  method: :delete, class:"btn btn-primary mt-3" %>
         </div>
       </div>
     <% end %>
